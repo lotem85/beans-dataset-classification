@@ -1,2 +1,7 @@
 dataset beans/
 .venv/
+EfficientNet/.venv/
+Vit/.venv/
+
+models/
+*.keras
