@@ -4,8 +4,9 @@ beans dataset classification
 In this project, I am running two transfer learning models to classify images.  
 The models I used are EfficientNetB6 and ViT.
 ## The dataset
-The neans dataset is of leaf images taken in the field in different districts in Uganda by the Makerere AI lab.  
-This is known dataset for leaning Machine Learning.  
+![alt text](helper_scripts/samples.png)  
+The beans dataset consists of leaf images taken in the field from different districts in Uganda by the Makerere AI lab.  
+It is a well-known dataset for learning machine learning.  
 
 The goal is to build a robust machine learning models that is able to distinguish between diseases in the Bean plants  
 
@@ -43,6 +44,6 @@ Note: The test and validation images remained unchanged across all subsets.
 
 
 
-![alt text](helper_scripts/line_plot_with_labels.png)
+![line plot result](helper_scripts/line_plot_with_labels.png)
 It can be observed that the results improve as the number of images increases.
 Additionally, the ViT-base-patch16-224 model demonstrates better performance overall.
