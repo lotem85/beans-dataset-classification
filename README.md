@@ -46,8 +46,11 @@ Note: The test and validation images remained unchanged across all subsets.
 
 
 ![line plot result](helper_scripts/line_plot_with_labels.png)
-It can be observed that the results improve as the number of images increases.
-Additionally, the ViT-base-patch16-224 model demonstrates better performance overall.
+
+## conclusions 
+It can be observed that the results improve as the number of images increases.  
+
+Additionally, the ViT-base-patch16-224 model demonstrates better performance overall.  
 An important point is that the transformer model requires significantly fewer resources,  
 which allows for more iterations and model improvement.  
   
