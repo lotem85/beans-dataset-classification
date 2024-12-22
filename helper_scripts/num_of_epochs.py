@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 data = {
     "Model": ["EfficientNetB6", "EfficientNetB6","EfficientNetB6","EfficientNetB6",
                "ViT-base-patch16-224", "ViT-base-patch16-224", "ViT-base-patch16-224", "ViT-base-patch16-224"],
-    "Images Count": [150, 500, 750, 1000, 150, 500, 750, 1000],
-    "Accuracy": [90, 91, 94, 94, 91, 95, 95, 98]
+    "Images_Count": [150, 500, 750, 1000, 150, 500, 750, 1000],
+    "Number_Of_Eppochs": [46, 29, 25, 25, 7, 4, 6, 18]
 }
 df = pd.DataFrame(data)
 
@@ -17,17 +17,17 @@ plt.figure(figsize=(10, 6))
 for model in df["Model"].unique():
     subset = df[df["Model"] == model]
     plt.plot(
-        subset["Images Count"], 
-        subset["Accuracy"], 
+        subset["Images_Count"], 
+        subset["Number_Of_Eppochs"], 
         marker="o", 
         label=model
     )
     # Add annotations for each point
     for i in range(len(subset)):
-        x = subset["Images Count"].iloc[i]
-        y = subset["Accuracy"].iloc[i]
+        x = subset["Images_Count"].iloc[i]
+        y = subset["Number_Of_Eppochs"].iloc[i]
         plt.annotate(
-            f"{y}%",  # Add the accuracy value as text
+            y,  # Add the accuracy value as text
             (x, y),  # Position of the annotation
             textcoords="offset points", 
             xytext=(0, 10),  # Offset to avoid overlapping the point
@@ -37,11 +37,11 @@ for model in df["Model"].unique():
         )
 
 # Formatting
-plt.title("Model Accuracy vs. Number of Images", fontsize=14)
+plt.title("Number of Epochs Vs Number of Image", fontsize=14)
 plt.xlabel("Number of Images", fontsize=12)
-plt.ylabel("Accuracy (%)", fontsize=12)
+plt.ylabel("Number of Epochs", fontsize=12)
 plt.legend(title="Model")
 plt.grid(True)
 
 # Save or Show
-plt.savefig("line_plot_with_labels.png", dpi=300)  # Save the figure
+plt.savefig("number_of_epochs.png", dpi=300)  # Save the figure

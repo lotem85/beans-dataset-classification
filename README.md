@@ -30,22 +30,31 @@ Afterward, I run both models on each subset of images.
 Note: The test and validation images remained unchanged across all subsets.
 
 
- ## The result
 
-| Model                        | Accuracy | Precision | Recall | F1 Score | Running Time |
-|------------------------------|----------|-----------|--------|----------|--------------|
-| EfficientNetB6 (150)          | 0.81     | 86%       | 81%    | 81%      | 36m          |
-| EfficientNetB6 (500)         | 0.89     | 90%       | 89%    | 89%      | 81m          |
-| EfficientNetB6 (750)         | 0.95     | 95%       | 95%    | 95%      | 119m         |
-| EfficientNetB6 (1000)        | 0.94     | 94%       | 94%    | 94%      | 165m         |
-| ViT (google/vit-base)150     | 0.84     | 84%       | 84%    | 84%      | 4m           |
-| ViT (google/vit-base)500     | 0.93     | 94%       | 93%    | 93%      | 10m          |
-| ViT (google/vit-base)750     | 0.96     | 96%       | 96%    | 96%      | 15m          |
-| ViT (google/vit-base)1000    | 0.96     | 96%       | 96%    | 96%      | 21m          |
+## The result
+
+| Model                        | Accuracy | Precision | Recall | F1 Score | Running Time | Epochs 
+|------------------------------|----------|-----------|--------|----------|--------------|---------|
+| EfficientNetB6 (150)          | 0.90     | 91%       | 90%    | 90%      | 72m          |  46
+| EfficientNetB6 (500)         | 0.91     | 92%       | 91%    | 91%      | 109m          | 29
+| EfficientNetB6 (750)         | 0.94     | 94%       | 94%    | 94%      | 130m         | 28
+| EfficientNetB6 (1000)        | 0.94     | 94%       | 94%    | 94%      | 175m         | 25
+| ViT (google/vit-base)150     | 0.91     | 91%       | 91%    | 91%      | 8m           | 7
+| ViT (google/vit-base)500     | 0.95     | 95%       | 95%    | 95%      | 12m          | 4
+| ViT (google/vit-base)750     | 0.95     | 97%       | 97%    | 97%      | 19m          | 6
+| ViT (google/vit-base)1000    | 0.98     | 99%       | 98%    | 98%      | 58m          | 18
 
 
 
 ![line plot result](helper_scripts/line_plot_with_labels.png)
+
+### Number of Epochs  
+The number of epochs was determined based on the best-performing metric,  
+which in this case is the loss function.  
+The final model selected is the one that achieved the best result in the loss function on the validation set. 
+
+![epochs num result](helper_scripts/number_of_epochs.png)
+
 
 ## conclusions 
 It can be observed that the results improve as the number of images increases.  
